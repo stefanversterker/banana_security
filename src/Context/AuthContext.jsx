@@ -3,16 +3,17 @@ import {createContext, useState} from 'react';
 export const AuthContext = createContext({});
 
 function AuthContextProvider({children}) {
+
     const [isAuth, toggleIsAuth] = useState(false)
 
     function login() {
-            console.log('Gebruiker is ingelogd!')
-            toggleIsAuth(true)
+        console.log('Gebruiker is ingelogd!')
+        toggleIsAuth(true)
     }
 
     function logout() {
-            console.log('Gebruiker is uitgelogd!');
-            toggleIsAuth(false);
+        console.log('Gebruiker is uitgelogd!');
+        toggleIsAuth(false);
     }
 
     const data = {
@@ -27,4 +28,5 @@ function AuthContextProvider({children}) {
         </AuthContext.Provider>
     )
 }
+
 export default AuthContextProvider;

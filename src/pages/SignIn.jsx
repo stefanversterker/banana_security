@@ -17,7 +17,11 @@ function SignIn() {
         <p>*invoervelden*</p>
         <button
             type="button"
-            onClick={() => login()}
+            onClick={() => {
+                login()
+                navigate("/profile")
+            }
+        }
         >
             Inloggen
         </button>
