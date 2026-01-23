@@ -19,12 +19,18 @@ function NavBar() {
           </span>
             </Link>
             <div>
-                {!auth ?
+                {auth.isAuth ? (
+                    <button
+                        type="button"
+                        onClick={logout}
+                    >
+                        Log out
+                    </button>
+                ) : (
                     <>
                         <button
                             type="button"
-                            onClick=
-                                {() => navigate('/signin')}
+                            onClick={() => navigate('/signin')}
                         >
                             Log in
                         </button>
@@ -35,14 +41,7 @@ function NavBar() {
                             Registreren
                         </button>
                     </>
-                    :
-                    <button
-                        type="button"
-                        onClick={() => logout()}
-                    >
-                        Log out
-                    </button>
-                }
+                )}
             </div>
         </nav>
     );

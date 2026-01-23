@@ -18,7 +18,7 @@ function App() {
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/profile" element={auth ? <Profile /> : <Navigate to="/"/>} />
+          <Route path="/profile" element={ auth.isAuth ? <Profile /> : <Navigate to="/"/>} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>

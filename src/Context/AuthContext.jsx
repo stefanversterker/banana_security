@@ -4,22 +4,24 @@ export const AuthContext = createContext({});
 
 function AuthContextProvider({children}) {
 
-    const [isAuth, toggleIsAuth] = useState(false)
+    const [isAuth, toggleIsAuth] = useState({isAuth: false, user: ''})
 
     function login() {
         console.log('Gebruiker is ingelogd!')
-        toggleIsAuth(true)
+        toggleIsAuth({isAuth: true, user: 'Stefan'})
     }
 
     function logout() {
         console.log('Gebruiker is uitgelogd!');
-        toggleIsAuth(false);
+        toggleIsAuth({isAuth: false, user: ''});
     }
 
     const data = {
         auth: isAuth,
+        user: '',
         login: login,
         logout: logout,
+
     }
 
     return (

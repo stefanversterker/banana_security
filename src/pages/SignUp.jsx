@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Input from "../components/Input/Input";
 
 function SignUp() {
   return (
@@ -9,7 +10,26 @@ function SignUp() {
         harum, numquam, placeat quisquam repellat rerum suscipit ullam vitae. A ab ad assumenda, consequuntur deserunt
         doloremque ea eveniet facere fuga illum in numquam quia reiciendis rem sequi tenetur veniam?</p>
       <form>
-        <p>*Invoervelden*</p>
+        <Input
+            labelText="email adres:"
+            name="email-address"
+            id="email-address"
+            type="email"
+        />
+          <Input
+              labelText="wachtwoord:"
+              name="password"
+              id="password"
+              type="password"
+          />
+          <Input
+              labelText="gebruikersnaam:"
+              name="username"
+              id="username"
+              type="text"
+          />
+          <button type="submit">registreer</button>
+
       </form>
       <p>Heb je al een account? Je kunt je <Link to="/signin">hier</Link> inloggen.</p>
     </>
