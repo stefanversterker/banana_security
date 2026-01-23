@@ -1,7 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import React, {useContext} from 'react';
+import {AuthContext} from "../Context/AuthContext";
+
 
 function SignIn() {
+
+    const navigate = useNavigate();
+    const {auth, login} = useContext(AuthContext)
+
   return (
     <>
       <h1>Inloggen</h1>
@@ -9,7 +15,12 @@ function SignIn() {
 
       <form>
         <p>*invoervelden*</p>
-        <button>Inloggen</button>
+        <button
+            type="button"
+            onClick={() => login()}
+        >
+            Inloggen
+        </button>
       </form>
 
       <p>Heb je nog geen account? <Link to="/signup">Registreer</Link> je dan eerst.</p>
