@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import Input from "../components/Input/Input";
 
 function SignUp() {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [username, setUsername] = useState('')
+
   return (
     <>
       <h1>Registreren</h1>
@@ -15,18 +20,36 @@ function SignUp() {
             name="email-address"
             id="email-address"
             type="email"
+            value={email}
+            onChange={(e) => {
+                setEmail(e.target.value)
+                console.log(email)
+            }
+        }
         />
           <Input
               labelText="wachtwoord:"
               name="password"
               id="password"
               type="password"
+              value={password}
+              onChange={(e) => {
+                  setPassword(e.target.value)
+                  console.log(password)
+              }
+          }
           />
           <Input
               labelText="gebruikersnaam:"
               name="username"
               id="username"
               type="text"
+              value={username}
+              onChange={(e) => {
+                  setUsername(e.target.value)
+                  console.log(username)
+              }
+          }
           />
           <button type="submit">registreer</button>
 

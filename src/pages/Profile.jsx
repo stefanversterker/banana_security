@@ -17,7 +17,7 @@ function Profile() {
             </section>
             <section>
                 <h2>Strikt geheime profiel-content</h2>
-                <p>Ik heb per ongeluk mijn banaan niet gescand bij de zelfscankassa.</p>
+                <p>Ik ben bang voor bananen.</p>
             </section>
             <p>Terug naar de <Link to="/">Homepagina</Link></p>
         </>
