@@ -17,8 +17,8 @@ function SignIn() {
         e.preventDefault();
         try {
             const response = await axios.post('https://novi-backend-api-wgsgz.ondigitalocean.app/api/login', {
-                email: '',
-                password: '',
+                email: email,
+                password: password,
             }, {
                 headers: {
                     'novi-education-project-id': 'b8985a1c-c1b7-4c00-9777-666019e0877d',
@@ -37,7 +37,7 @@ function SignIn() {
       <h1>Inloggen</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
 
-      <form>
+      <form onSubmit={handleSubmit}>
           <Input
               labelText="email adres:"
               name="email-address"
@@ -63,8 +63,8 @@ function SignIn() {
           }
           />
         <button
-            type="button"
-            onClick={() => {
+            type="submit"
+            onSubmit={() => {
                 login()
                 navigate("/profile")
                 console.log(email + password)

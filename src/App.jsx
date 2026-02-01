@@ -10,7 +10,7 @@ import './App.css';
 
 function App() {
 
-    const {auth} = useContext(AuthContext)
+    const {isAuth} = useContext(AuthContext)
 
   return (
     <>
@@ -18,7 +18,7 @@ function App() {
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/profile" element={ auth.isAuth ? <Profile /> : <Navigate to="/"/>} />
+          <Route path="/profile" element={ isAuth ? <Profile /> : <Navigate to="/"/>} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
