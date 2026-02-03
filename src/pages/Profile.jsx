@@ -22,10 +22,15 @@ function Profile() {
                             'novi-education-project-id': 'b8985a1c-c1b7-4c00-9777-666019e0877d',
                             Authorization: `Bearer ${localStorage.getItem('token')}`,
                         },
+                        params: {
+                            userId: 1,
+                        }
                     }
                 );
 
-                setData(response.data.data);
+                setData(response);
+                console.log(data)
+
             } catch {
                 toggleError(true);
             } finally {
