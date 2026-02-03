@@ -1,10 +1,16 @@
+import {useContext} from 'react';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {AuthContext} from "../Context/AuthContext";
 
 function Home() {
+
+  const { test } =useContext(AuthContext)
+
   return (
     <>
       <h1>Homepagina</h1>
+      <h1>{test}</h1>
       <section>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem id libero provident! Accusantium at autem
           cumque, esse eum, fugiat ipsa ipsam quia quis ratione repudiandae sapiente sequi sit tempora voluptates.
